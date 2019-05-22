@@ -1,0 +1,27 @@
+1. what is your favorite pastime
+would you rather go to a rock concert or to a symphony concert?
+Ideal Saturday (Netflix or kayaking)
+favorite game of thrones character
+favorite subject in school
+
+
+// Statement with a 5-digit Likert Scale
+
+1. Your ideal Saturday is staying in and watching Neftlix. 
+2. You'd rather spend a weekend sunbathing by the pool than kayaking. 
+3. Crowds and large gatherings tire you.
+4. Sometimes you prefer make decision on a whim. 
+5. You'd rather explore a new city than go on a beach vacation.
+6. Sometimes you find yourself worrying without an apparent reason.
+7. You'd rather avoid conflict than argue to prove yourself right.
+8. You find it easy to put yourself in other people's shoes.
+9. Your mind is always full of ideas.
+10. People can easily upset you.
+
+Openness. 5 1 2 
+Conscientiousness.
+Extraversion. 3 
+Agreeableness.7
+Neuroticism. 6
+Empathy. 8
+Impulsiveness. 4
