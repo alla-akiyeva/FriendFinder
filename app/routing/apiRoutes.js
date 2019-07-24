@@ -10,7 +10,9 @@ module.exports = function(app) {
 
     app.post("/api/friends", function(req, res) {
         const userInput = req.body;
-        res.json()
+        console.log("User: ", userInput);
+        friends.push(userInput);
+        res.json(userInput)
     });
 
 }

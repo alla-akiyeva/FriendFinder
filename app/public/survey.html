@@ -6,6 +6,7 @@
   <title>Friend Finder</title>
   <!--Bootstrap-->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   
 </head>
 
@@ -16,10 +17,10 @@
         <h4>About you</h4>
         <br>
         Name (Required)
-        <input type="text" class="form-control">
+        <input id="name" type="text" class="form-control">
         <br>
         Link to Photo (Required)
-        <input type="text" class="form-control">
+        <input id="photo" type="text" class="form-control">
         <hr class="my-4">
     
         <h5>Question1</h5>
@@ -149,7 +150,7 @@
         <br>
     
         <h5>Question10</h5>
-        <p>People can easily upset you.</p>
+        <p>You find yourself easily offended.</p>
         <!--Options-->
         <select class="chosen-select" id="q10">
             <option value="">Select an option</option>
@@ -162,7 +163,7 @@
         <br>
         <br>
     
-        <input class="btn btn-primary btn-lg" type="submit" value="Submit">
+        <input class="btn btn-primary btn-lg" href="/api/submit" type="submit" id="submit" value="Submit">
         <a class="btn btn-primary btn-lg" href="/" role="button">Home</a>
     </div>
     
@@ -172,11 +173,11 @@
             <p>
                 <a href="/api/friends">API Friends List</a>
                 |
-                <a href ="https://github.com/alla-akiyeva/FriendFinder" target="_blank">GitHub Repo</a>
+                <a href="https://github.com/alla-akiyeva/FriendFinder" target="_blank">GitHub Repo</a>
             </p>
         </div>
     </footer>
 
-  <!--Javascript Link-->
+  <script type="text/javascript" src="assets/survey.js"></script>
 </body>
 </html>
