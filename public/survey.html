@@ -1,0 +1,232 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Friend Finder</title>
+  <!--Bootstrap-->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h3>Survey Questions</h3>
+        <hr class="my-4">
+        <h4>About you</h4>
+        <br>
+        Name (Required)
+        <input id="name" type="text" class="form-control">
+        <br>
+        Link to Photo (Required)
+        <input id="photo" type="text" class="form-control">
+        <hr class="my-4">
+    
+        <h5>Question1</h5>
+        <p>You'd rather spend a weekend kayaking than sunbathing by the pool. </p>
+        <!--Options-->
+        <select class="chosen-select" id="q1">
+            <option value="">Select an option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2 (Disagree)</option>
+            <option value="3">3 (Neutral)</option>
+            <option value="4">4 (Agree)</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <br>
+        <br>
+    
+        <h5>Question2</h5>
+        <p>Your ideal Saturday is staying in and watching Neftlix.</p>
+        <!--Options-->
+        <select class="chosen-select" id="q2">
+            <option value="">Select an option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2 (Disagree)</option>
+            <option value="3">3 (Neutral)</option>
+            <option value="4">4 (Agree)</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <br>
+        <br>
+    
+        <h5>Question3</h5>
+        <p>Crowds and large gatherings tire you.</p>
+        <!--Options-->
+        <select class="chosen-select" id="q3">
+            <option value="">Select an option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2 (Disagree)</option>
+            <option value="3">3 (Neutral)</option>
+            <option value="4">4 (Agree)</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <br>
+        <br>
+    
+        <h5>Question4</h5>
+        <p>You prefer planning ahead rather than making sponteneous decisions.</p>
+       <!--Options-->
+       <select class="chosen-select" id="q4">
+            <option value="">Select an option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2 (Disagree)</option>
+            <option value="3">3 (Neutral)</option>
+            <option value="4">4 (Agree)</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <br>
+        <br>
+    
+        <h5>Question5</h5>
+        <p>You'd rather explore a new city than go on a beach vacation.</p>
+        <!--Options-->
+        <select class="chosen-select" id="q5">
+            <option value="">Select an option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2 (Disagree)</option>
+            <option value="3">3 (Neutral)</option>
+            <option value="4">4 (Agree)</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <br>
+        <br>
+    
+        <h5>Questioh6</h5>
+        <p>Sometimes you find yourself worrying with no apparent reason.</p>
+        <!--Options-->
+        <select class="chosen-select" id="q6">
+            <option value="">Select an option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2 (Disagree)</option>
+            <option value="3">3 (Neutral)</option>
+            <option value="4">4 (Agree)</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <br>
+        <br>
+    
+        <h5>Question7</h5>
+        <p>You'd rather avoid conflict than argue to prove yourself right.</p>
+        <!--Options-->
+        <select class="chosen-select" id="q7">
+            <option value="">Select an option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2 (Disagree)</option>
+            <option value="3">3 (Neutral)</option>
+            <option value="4">4 (Agree)</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <br>
+        <br>
+    
+        <h5>Question8</h5>
+        <p>You find it easy to put yourself in other people's shoes.</p>
+        <!--Options-->
+        <select class="chosen-select" id="q8">
+            <option value="">Select an option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2 (Disagree)</option>
+            <option value="3">3 (Neutral)</option>
+            <option value="4">4 (Agree)</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <br>
+        <br>
+    
+        <h5>Question9</h5>
+        <p>You often find yourself daydreaming.</p>
+        <!--Options-->
+        <select class="chosen-select" id="q9">
+            <option value="">Select an option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2 (Disagree)</option>
+            <option value="3">3 (Neutral)</option>
+            <option value="4">4 (Agree)</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <br>
+        <br>
+    
+        <h5>Question10</h5>
+        <p>You find yourself easily offended.</p>
+        <!--Options-->
+        <select class="chosen-select" id="q10">
+            <option value="">Select an option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2 (Disagree)</option>
+            <option value="3">3 (Neutral)</option>
+            <option value="4">4 (Agree)</option>
+            <option value="5">5 (Strongly Agree)</option>
+        </select>
+        <br>
+        <br>
+    
+        <input class="btn btn-primary btn-lg" href="/api/submit" type="submit" id="submit" value="Submit">
+        <a class="btn btn-primary btn-lg" href="/" role="button">Home</a>
+    </div>
+
+    <br>
+    <footer class="footer">
+        <div class="container">
+            <p>
+                <a href="/api/friends">API Friends List</a>
+                |
+                <a href="https://github.com/alla-akiyeva/FriendFinder" target="_blank">GitHub Repo</a>
+            </p>
+        </div>
+    </footer>
+
+    <div class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Your Best Match</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p id="friend-name"></p>
+              <img id="friend-image" src="">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    
+    <script type="text/javascript">
+    $("#submit").on("click", function(event) {
+
+        // Add input validation here
+
+        event.preventDefault();
+        const userInfo = {
+        name: $("#name").val().trim(),
+        photo: $("#photo").val().trim(),
+        scores: [
+            $("#q1").val(), 
+            $("#q2").val(),
+            $("#q3").val(),
+            $("#q4").val(),
+            $("#q5").val(),
+            $("#q6").val(),
+            $("#q7").val(),
+            $("#q8").val(),
+            $("#q9").val(),
+            $("#q10").val()
+            ]
+        }
+
+        $.post("/api/friends", userInfo, function(data) {
+            $("#friend-name").text(data.name);
+            $("#friend-image").attr("src", data.photo);
+            $(".modal").modal();
+        })
+    });
+    </script>
+</body>
+</html>
