@@ -7,7 +7,7 @@
   <!--Bootstrap-->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -166,7 +166,7 @@
         <input class="btn btn-primary btn-lg" href="/api/submit" type="submit" id="submit" value="Submit">
         <a class="btn btn-primary btn-lg" href="/" role="button">Home</a>
     </div>
-    
+
     <br>
     <footer class="footer">
         <div class="container">
@@ -178,6 +178,55 @@
         </div>
     </footer>
 
-  <script type="text/javascript" src="assets/survey.js"></script>
+    <div class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Your Best Match</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p id="friend-name"></p>
+              <img id="friend-image" src="">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    
+    <script type="text/javascript">
+    $("#submit").on("click", function(event) {
+
+        // Add input validation here
+
+        event.preventDefault();
+        const userInfo = {
+        name: $("#name").val().trim(),
+        photo: $("#photo").val().trim(),
+        scores: [
+            $("#q1").val(), 
+            $("#q2").val(),
+            $("#q3").val(),
+            $("#q4").val(),
+            $("#q5").val(),
+            $("#q6").val(),
+            $("#q7").val(),
+            $("#q8").val(),
+            $("#q9").val(),
+            $("#q10").val()
+            ]
+        }
+
+        $.post("/api/friends", userInfo, function(data) {
+            $("#friend-name").text(data.name);
+            $("#friend-image").attr("src", data.photo);
+            $(".modal").modal();
+        })
+    });
+    </script>
 </body>
 </html>
