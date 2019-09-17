@@ -189,7 +189,7 @@
             </div>
             <div class="modal-body">
               <p id="friend-name"></p>
-              <img id="friend-image" src="">
+              <img id="friend-image" src="" style="width: 100%">
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
@@ -222,9 +222,24 @@
         }
 
         $.post("/api/friends", userInfo, function(data) {
+
             $("#friend-name").text(data.name);
             $("#friend-image").attr("src", data.photo);
             $(".modal").modal();
+
+            $("#name").val(""),
+            $("#photo").val(""),
+            $("#q1").val(""), 
+            $("#q2").val(""),
+            $("#q3").val(""),
+            $("#q4").val(""),
+            $("#q5").val(""),
+            $("#q6").val(""),
+            $("#q7").val(""),
+            $("#q8").val(""),
+            $("#q9").val(""),
+            $("#q10").val("")
+
         })
     });
     </script>
