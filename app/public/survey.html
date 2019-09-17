@@ -93,7 +93,7 @@
         <br>
         <br>
     
-        <h5>Questioh6</h5>
+        <h5>Question6</h5>
         <p>Sometimes you find yourself worrying with no apparent reason.</p>
         <!--Options-->
         <select class="chosen-select" id="q6">
@@ -164,7 +164,8 @@
         <br>
     
         <input class="btn btn-primary btn-lg" href="/api/submit" type="submit" id="submit" value="Submit">
-        <a class="btn btn-primary btn-lg" href="/" role="button">Home</a>
+        <a class="btn btn-primary btn-lg" href="/" role="button">Home</a><br>
+        <span class="valid"></span>
     </div>
 
     <br>
@@ -201,8 +202,6 @@
     <script type="text/javascript">
     $("#submit").on("click", function(event) {
 
-        // Add input validation here
-
         event.preventDefault();
         const userInfo = {
         name: $("#name").val().trim(),
@@ -223,6 +222,36 @@
 
         $.post("/api/friends", userInfo, function(data) {
 
+        //    if ( $("#name").val() == "" || $("#photo").val() == "") {
+        //         alert("One of the fields is empty");
+        //    }
+
+           // If one of the answer options is empty, display "Please answer all questions"
+           function validateInput () {
+                var isValid = true;
+
+                if ( $("#name").val() == "" || $("#photo").val() == "") {
+                    isValid = false;
+                    $(".valid").html("One of the fields is empty");
+                    console.log(isValid);
+                    return isValid;
+                }
+
+                $(".chosen-select").each( function() {
+                    if ($(this).val() === "") {
+                        isValid = false;
+                        $(".valid").html("Please answer all questions");
+                    }
+                })   
+                return isValid;
+                console.log(isValid);
+           };
+
+           validateInput();
+           
+
+          // If validation is passed, run this
+          if (validateInput() ) {
             $("#friend-name").text(data.name);
             $("#friend-image").attr("src", data.photo);
             $(".modal").modal();
@@ -239,6 +268,7 @@
             $("#q8").val(""),
             $("#q9").val(""),
             $("#q10").val("")
+          }
 
         })
     });
