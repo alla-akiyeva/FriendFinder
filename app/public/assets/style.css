@@ -1,0 +1,13 @@
+body {
+    background-color: red;
+}
+
+/* select.chosen-select {
+    width: 40%;
+    height: 30px;
+    color: gray;
+} */
+
+.jumbotron {
+    background-image: url("./friendfinder.jpg")
+}
