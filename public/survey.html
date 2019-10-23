@@ -6,8 +6,8 @@
   <title>Friend Finder</title>
   <!--Bootstrap-->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <base href="/">
+  <!-- <link href="/assets/css/style.css" rel="stylesheet" type="text/css"> -->
 </head>
 
 <style>
@@ -172,7 +172,7 @@
     
         <input class="btn btn-primary btn-lg" href="/api/submit" type="submit" id="submit" value="Submit">
         <a class="btn btn-primary btn-lg" href="/" role="button">Home</a><br>
-        <span class="valid"></span>
+        <span class="valid" style="color: red; font-weight: bold"></span>
     </div>
 
     <br>
@@ -206,78 +206,74 @@
         </div>
     </div>
     
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
     <script type="text/javascript">
     $("#submit").on("click", function(event) {
 
         event.preventDefault();
-        const userInfo = {
-        name: $("#name").val().trim(),
-        photo: $("#photo").val().trim(),
-        scores: [
-            $("#q1").val(), 
-            $("#q2").val(),
-            $("#q3").val(),
-            $("#q4").val(),
-            $("#q5").val(),
-            $("#q6").val(),
-            $("#q7").val(),
-            $("#q8").val(),
-            $("#q9").val(),
-            $("#q10").val()
-            ]
-        }
 
-        $.post("/api/friends", userInfo, function(data) {
+        // If one of the answer options is empty, display "Please answer all questions"
+        function validateInput () {
+            var isValid = true;
 
-        //    if ( $("#name").val() == "" || $("#photo").val() == "") {
-        //         alert("One of the fields is empty");
-        //    }
-
-           // If one of the answer options is empty, display "Please answer all questions"
-           function validateInput () {
-                var isValid = true;
-
-                if ( $("#name").val() == "" || $("#photo").val() == "") {
-                    isValid = false;
-                    $(".valid").html("One of the fields is empty");
-                    console.log(isValid);
-                    return isValid;
-                }
-
-                $(".chosen-select").each( function() {
-                    if ($(this).val() === "") {
-                        isValid = false;
-                        $(".valid").html("Please answer all questions");
-                    }
-                })   
+            if ( $("#name").val() == "" || $("#photo").val() == "") {
+                isValid = false;
+                $(".valid").html("One of the fields is empty");
                 return isValid;
-                console.log(isValid);
-           };
+            }
 
-           validateInput();
-           
+            $(".chosen-select").each( function() {
+                if ($(this).val() === "") {
+                    isValid = false;
+                    $(".valid").html("Please answer all questions");
+                }
+            })   
+            return isValid;
+        };
+    
+        validateInput();
 
-          // If validation is passed, run this
-          if (validateInput() ) {
-            $("#friend-name").text(data.name);
-            $("#friend-image").attr("src", data.photo);
-            $(".modal").modal();
+        if (validateInput() ) {
+            const userInfo = {
+                name: $("#name").val().trim(),
+                photo: $("#photo").val().trim(),
+                scores: [
+                    $("#q1").val(), 
+                    $("#q2").val(),
+                    $("#q3").val(),
+                    $("#q4").val(),
+                    $("#q5").val(),
+                    $("#q6").val(),
+                    $("#q7").val(),
+                    $("#q8").val(),
+                    $("#q9").val(),
+                    $("#q10").val()
+                ]
+            }
 
-            $("#name").val(""),
-            $("#photo").val(""),
-            $("#q1").val(""), 
-            $("#q2").val(""),
-            $("#q3").val(""),
-            $("#q4").val(""),
-            $("#q5").val(""),
-            $("#q6").val(""),
-            $("#q7").val(""),
-            $("#q8").val(""),
-            $("#q9").val(""),
-            $("#q10").val("")
-          }
+            $.post("/api/friends", userInfo, function(data) {
 
-        })
+                $("#friend-name").text(data.name);
+                $("#friend-image").attr("src", data.photo);
+                $(".modal").modal();
+
+                $("#name").val(""),
+                $("#photo").val(""),
+                $("#q1").val(""), 
+                $("#q2").val(""),
+                $("#q3").val(""),
+                $("#q4").val(""),
+                $("#q5").val(""),
+                $("#q6").val(""),
+                $("#q7").val(""),
+                $("#q8").val(""),
+                $("#q9").val(""),
+                $("#q10").val(""),
+                $(".valid").html("")
+            })
+        }
     });
     </script>
 </body>

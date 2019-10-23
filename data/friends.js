@@ -1,7 +1,7 @@
 const friendArr = [
     {
-        "name":"Ahmed",
-        "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+        "name":"Nathaniel",
+        "photo":"https://cdn-images-1.medium.com/max/1050/1*z48DPYiCnIgb5UzoIBF8qQ.jpeg",
         "scores":[5,1,4,4,5,1,2,5,4,1]
     },
     {
